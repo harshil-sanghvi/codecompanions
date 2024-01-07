@@ -10,7 +10,7 @@ const Footer = () => {
       </h1>
 
       {/* <a
-        href="https://www.linkedin.com/in/prayutsu/"
+        href="https://www.linkedin.com"
         rel="noreferrer"
         target="_blank"
       >
