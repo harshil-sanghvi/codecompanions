@@ -25,11 +25,16 @@ const {
 
 const { protect } = require("../middleware/authMiddleware");
 
+// Route to get all contests related to a user
 router.route("/all").get(protect, getContests);
+
+// Route to get the ongoing contest related to a user
 router.route("/ongoing").get(protect, getOngoingContest);
+
+// Route to create a new contest
 router.route("/create").post(
   [
-    // Validating number of problems
+    // Validating contest creation data
     body(
       "problems",
       `Number of problems should be in between ${MIN_NUMBER_OF_PROBLEMS} and ${MAX_NUMBER_OF_PROBLEMS} `
@@ -37,12 +42,10 @@ router.route("/create").post(
       min: MIN_NUMBER_OF_PROBLEMS,
       max: MAX_NUMBER_OF_PROBLEMS,
     }),
-    // Validating contest duration
     body(
       "duration",
       `Contest Duration should be in between ${MIN_DURATION} minutes and ${MAX_DURATION} minutes`
     ).isFloat({ min: MIN_DURATION, max: MAX_DURATION }),
-    // Validating points of every problem
     body(
       "problems.*.points",
       `Points of each problem should lie between ${MIN_PROBLEM_POINTS} and ${MAX_PROBLEM_POINTS}`
@@ -50,13 +53,9 @@ router.route("/create").post(
       min: MIN_PROBLEM_POINTS,
       max: MAX_PROBLEM_POINTS,
     }),
-    // Validating Problem Name
     body("problems.*.name", "Name of problem should not be empty").notEmpty(),
-    // Validating Problem Link
     body("problems.*.problemLink", "Problem link is not specified").notEmpty(),
-    // Validating Problem ID
     body("problems.*.problemId", "Problem ID is not specified").notEmpty(),
-    // Validating Problem Rating
     body(
       "problems.*.rating",
       `Problem rating should lie between ${MIN_PROBLEM_RATING} and ${MAX_PROBLEM_RATING}`
@@ -66,21 +65,25 @@ router.route("/create").post(
   createContest
 );
 
+// Route to join a contest
 router.route("/join/:contestId").put(protect, joinContest);
-router
-  .route("/solve/:contestId")
-  .put(
-    [
-      body("problemName", "problemName can't be empty").not().isEmpty(),
-      body("username", "username can't be empty").not().isEmpty(),
-      body("timeStamp", "timeStamp can't be empty").not().isEmpty(),
-    ],
-    protect,
-    solveProblem
-  );
+
+// Route to solve a problem in a contest
+router.route("/solve/:contestId").put(
+  [
+    // Validating solving a problem data
+    body("problemName", "problemName can't be empty").not().isEmpty(),
+    body("username", "username can't be empty").not().isEmpty(),
+    body("timeStamp", "timeStamp can't be empty").not().isEmpty(),
+  ],
+  protect,
+  solveProblem
+);
+
+// Route to start a contest
 router.route("/start/:contestId").put(
   [
-    // Validating number of problems
+    // Validating starting a contest data
     body(
       "problems",
       `Number of problems should be in between ${MIN_NUMBER_OF_PROBLEMS} and ${MAX_NUMBER_OF_PROBLEMS} `
@@ -88,7 +91,6 @@ router.route("/start/:contestId").put(
       min: MIN_NUMBER_OF_PROBLEMS,
       max: MAX_NUMBER_OF_PROBLEMS,
     }),
-    // Validating points of every problem
     body(
       "problems.*.points",
       `Points of each problem should lie between ${MIN_PROBLEM_POINTS} and ${MAX_PROBLEM_POINTS}`
@@ -96,13 +98,9 @@ router.route("/start/:contestId").put(
       min: MIN_PROBLEM_POINTS,
       max: MAX_PROBLEM_POINTS,
     }),
-    // Validating Problem Name
     body("problems.*.name", "Name of problem should not be empty").notEmpty(),
-    // Validating Problem Link
     body("problems.*.problemLink", "Problem link is not specified").notEmpty(),
-    // Validating Problem ID
     body("problems.*.problemId", "Problem ID is not specified").notEmpty(),
-    // Validating Problem Rating
     body(
       "problems.*.rating",
       `Problem rating should lie between ${MIN_PROBLEM_RATING} and ${MAX_PROBLEM_RATING}`
@@ -111,8 +109,11 @@ router.route("/start/:contestId").put(
   protect,
   startContest
 );
+
+// Route to invalidate a contest
 router.route("/invalidate/:contestId").put(protect, invalidateContest);
 
+// Route to leave a contest
 router.route("/leave/:contestId").put(protect, leaveContest);
 
 module.exports = router;

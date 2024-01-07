@@ -1,4 +1,4 @@
-# CfLockOut
+# CodeCompanions
 
 A web app to practice Codeforces Problems with friends in a Lockout contest format.
 

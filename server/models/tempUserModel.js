@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Define the schema for temporary users
 const tempUserSchema = mongoose.Schema(
   {
     name: {
@@ -16,7 +17,7 @@ const tempUserSchema = mongoose.Schema(
     },
     username: {
       type: String,
-      required: [true, "Please enter codeforces username"],
+      required: [true, "Please enter Codeforces username"],
     },
     verified: {
       type: Boolean,
@@ -25,11 +26,14 @@ const tempUserSchema = mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // Adds createdAt and updatedAt timestamps to documents
   }
 );
 
+// Create a model based on the schema
 const TempUser = mongoose.model("TempUser", tempUserSchema);
+
+// Export the TempUser model and the user schema
 module.exports = {
   TempUser,
   userSchema: tempUserSchema,

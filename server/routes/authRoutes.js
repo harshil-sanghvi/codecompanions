@@ -12,6 +12,7 @@ const {
 const { protect } = require("../middleware/authMiddleware");
 const router = express.Router();
 
+// Route for user registration
 router.post(
   "/register",
   [
@@ -25,6 +26,7 @@ router.post(
   registerUser
 );
 
+// Route for user login
 router.post(
   "/login",
   [
@@ -34,24 +36,28 @@ router.post(
   loginUser
 );
 
+// Route for updating user profile
 router.put(
   "/profile",
   [
     body("name", "Name can not be empty.").isLength({ min: 1 }),
     body("username", "Username can not be empty").isLength({ min: 1 }),
   ],
-  protect,
+  protect, // Middleware to protect the route with authentication
   updateProfile
 );
 
+// Route for sending a reset password link
 router.post(
   "/send-reset-password-link",
   [body("email", "Email can not be empty.").isLength({ min: 1 }).isEmail()],
   sendResetPasswordLink
 );
 
+// Route for verifying reset password token
 router.post("/verify-reset-password-token/:token", verifyPasswordResetToken);
 
+// Route for resetting user password
 router.put(
   "/reset-password",
   [
@@ -59,10 +65,11 @@ router.put(
       min: 4,
     }),
   ],
-  protect,
+  protect, // Middleware to protect the route with authentication
   resetPassword
 );
 
+// Route for verifying user email
 router.put("/verify/:token", verifyUser);
 
 module.exports = router;
