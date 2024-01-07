@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { register, reset } from "../../features/auth/authSlice";
 import { LockClosedIcon } from "@heroicons/react/solid";
-import { ReactComponent as CflockoutLogo } from "../../components/assets/cflockout-logo-icon.svg";
+import { ReactComponent as CflockoutLogo } from "../../components/assets/logo.svg";
 import { toast } from "react-toastify";
 import AlreadyLoggedIn from "../../components/AlreadyLoggedIn";
 import { toggleHeaderBanner } from "../../features/nav/navSlice";

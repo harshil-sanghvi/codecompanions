@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { ReactComponent as CflockoutLogo } from "../../components/assets/cflockout-logo-icon.svg";
+import { ReactComponent as CflockoutLogo } from "../../components/assets/logo.svg";
 import PasswordResetSuccessful from "../../components/PasswordResetSuccessful";
 import { reset, resetPassword } from "../../features/auth/authSlice";
 import PleaseLoginToView from "../../components/PleaseLoginToView";

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import AlreadyLoggedIn from "../../components/AlreadyLoggedIn";
-import { ReactComponent as CflockoutLogo } from "../../components/assets/cflockout-logo-icon.svg";
+import { ReactComponent as CflockoutLogo } from "../../components/assets/logo.svg";
 import { reset, resetIsSucess, sendResetPasswordLink } from "../../features/auth/authSlice";
 import { toggleHeaderBanner } from "../../features/nav/navSlice";
 

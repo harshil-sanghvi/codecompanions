@@ -5,8 +5,8 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfileImageUrl, logout } from "../features/auth/authSlice";
 import { changeIndex } from "../features/nav/navSlice";
-// import { ReactComponent as CflockoutLogo } from "./assets/new-cflockout-logo.svg";
-// import { ReactComponent as CflockoutIconLogo } from "./assets/cflockout-logo-icon.svg";
+import { ReactComponent as CflockoutLogo } from "./assets/logo.svg";
+import { ReactComponent as CflockoutIconLogo } from "./assets/logo.svg";
 import Avatar from "./Avatar";
 
 const navigation = [
@@ -77,14 +77,14 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:justify-start">
                 <div className="flex-shrink-0 flex items-center text-white h-10 w-auto cursor-pointer" onClick={()=>navigate("/")}>
-                  {/* <CflockoutLogo
-                    className="hidden lg:block h-10 w-auto cursor-pointer"
+                  <CflockoutLogo
+                    className="hidden lg:block h-10 w-auto cursor-pointer mr-3"
                     onClick={() => navigate("/")}
                   />
                   <CflockoutIconLogo
                     onClick={() => navigate("/")}
                     className="lg:hidden h-10 w-auto cursor-pointer"
-                  /> */}
+                  />
                   CodeCompanions
                 </div>
                 <div className="hidden sm:block sm:ml-6">
