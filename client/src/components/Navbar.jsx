@@ -5,8 +5,8 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfileImageUrl, logout } from "../features/auth/authSlice";
 import { changeIndex } from "../features/nav/navSlice";
-import { ReactComponent as CflockoutLogo } from "./assets/logo.svg";
-import { ReactComponent as CflockoutIconLogo } from "./assets/logo.svg";
+import { ReactComponent as CodeCompanionsLogo } from "./assets/logo.svg";
+import { ReactComponent as CodeCompanionsIconLogo } from "./assets/logo.svg";
 import Avatar from "./Avatar";
 
 const navigation = [
@@ -59,7 +59,7 @@ export default function Navbar() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-[#451A03] shadow-lg w-full">
+    <Disclosure as="nav" className="bg-[#78350F] shadow-lg w-full">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-screen">
@@ -77,13 +77,13 @@ export default function Navbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:justify-start">
                 <div className="flex-shrink-0 flex items-center text-white h-10 w-auto cursor-pointer" onClick={()=>navigate("/")}>
-                  <CflockoutLogo
+                  <CodeCompanionsLogo
                     className="hidden lg:block h-10 w-auto cursor-pointer mr-3"
                     onClick={() => navigate("/")}
                   />
-                  <CflockoutIconLogo
+                  <CodeCompanionsIconLogo
                     onClick={() => navigate("/")}
-                    className="lg:hidden h-10 w-auto cursor-pointer"
+                    className="lg:hidden h-10 w-auto cursor-pointer mr-3"
                   />
                   CodeCompanions
                 </div>
@@ -118,7 +118,7 @@ export default function Navbar() {
                 {user ? (
                   <Menu as="div" className="ml-3 relative">
                     <div className="pl-4">
-                      <Menu.Button className="bg-[#451A03] flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                      <Menu.Button className="bg-[#78350F] flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                         <span className="sr-only">Open user menu</span>
                         <span className="h-8 w-8 rounded-full border-[1px] border-black">
                           {imageUrl === "" ? (

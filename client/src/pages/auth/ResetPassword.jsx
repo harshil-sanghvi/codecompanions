@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { ReactComponent as CflockoutLogo } from "../../components/assets/logo.svg";
+import { ReactComponent as CodeCompanionsLogo } from "../../components/assets/logo.svg";
 import PasswordResetSuccessful from "../../components/PasswordResetSuccessful";
 import { reset, resetPassword } from "../../features/auth/authSlice";
 import PleaseLoginToView from "../../components/PleaseLoginToView";
@@ -69,7 +69,7 @@ const ResetPassword = () => {
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <CflockoutLogo className="mx-auto h-20 w-auto" />
+            <CodeCompanionsLogo className="mx-auto h-20 w-auto" />
 
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Reset Password

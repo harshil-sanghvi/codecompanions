@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { register, reset } from "../../features/auth/authSlice";
 import { LockClosedIcon } from "@heroicons/react/solid";
-import { ReactComponent as CflockoutLogo } from "../../components/assets/logo.svg";
+import { ReactComponent as CodeCompanionsLogo } from "../../components/assets/logo.svg";
 import { toast } from "react-toastify";
 import AlreadyLoggedIn from "../../components/AlreadyLoggedIn";
 import { toggleHeaderBanner } from "../../features/nav/navSlice";
@@ -92,7 +92,7 @@ export default function Signup() {
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <CflockoutLogo className="mx-auto h-20 w-auto" />
+            <CodeCompanionsLogo className="mx-auto h-20 w-auto" />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Create a new account
             </h2>
