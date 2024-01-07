@@ -1,7 +1,7 @@
 {
-  "name": "cflockout",
+  "name": "codecompanions",
   "version": "1.0.0",
-  "description": "Lockout contest for practice on Codeforces",
+  "description": "Custom contest for practice on Codeforces with friends",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "install:client": "npm install --prefix client",
     "setup": "npm run install:client && npm install"
   },
-  "author": "prayutsu",
+  "author": "Umang and Harshil",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
