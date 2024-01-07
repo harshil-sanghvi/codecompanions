@@ -5,6 +5,7 @@ const { MAX_PLAYERS } = require("../config/constants");
 const { getUpdatedRankList, myVar } = require("../services/cfService");
 const types = require("mongoose").Types;
 
+// Function to update contestants list after a contest operation
 const getUpdatedContestantsList = async (
   contestantsList,
   username,

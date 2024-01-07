@@ -8,6 +8,7 @@ const axios = require("axios");
 const { RESET_PASSWORD, VERIFY_EMAIL } = require("../config/constants");
 const { sendMail } = require("../services/emailService");
 
+//Register a new user
 const registerUser = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -63,6 +64,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
+//Login user
 const loginUser = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -94,6 +96,7 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
+// Send a reset password link
 const sendResetPasswordLink = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -111,6 +114,7 @@ const sendResetPasswordLink = asyncHandler(async (req, res) => {
   });
 });
 
+// Reset user's password
 const resetPassword = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -132,6 +136,7 @@ const resetPassword = asyncHandler(async (req, res) => {
   });
 });
 
+// Update user's profile
 const updateProfile = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -158,6 +163,7 @@ const updateProfile = asyncHandler(async (req, res) => {
   });
 });
 
+// Verify user's password reset token
 const verifyPasswordResetToken = asyncHandler(async (req, res) => {
   if (!req.params.token) {
     throw new Error("Verification token not present.");
@@ -182,6 +188,7 @@ const verifyPasswordResetToken = asyncHandler(async (req, res) => {
   });
 });
 
+// Verify a user
 const verifyUser = asyncHandler(async (req, res) => {
   if (!req.params.token) {
     throw new Error("Verification token not present.");
