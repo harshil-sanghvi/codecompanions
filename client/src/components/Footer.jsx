@@ -9,16 +9,16 @@ const Footer = () => {
         <span></span>
       </h1>
 
-      <a
+      {/* <a
         href="https://www.linkedin.com/in/prayutsu/"
         rel="noreferrer"
         target="_blank"
       >
         <AiFillLinkedin className="cursor-pointer" />
-      </a>
+      </a> */}
 
       <a
-        href="https://github.com/prayutsu/cflockout"
+        href="https://github.com/harshil-sanghvi/codecompanions"
         rel="noreferrer"
         target="_blank"
       >
