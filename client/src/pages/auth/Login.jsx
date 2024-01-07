@@ -73,7 +73,7 @@ export default function Login() {
               Or{" "}
               <Link
                 to="/auth/signup"
-                className="font-medium text-cyan-600 hover:text-cyan-500"
+                className="font-medium text-[#B45309] hover:text-[#D97706]"
               >
                 create an account
               </Link>
@@ -97,7 +97,7 @@ export default function Login() {
                   value={formData.email}
                   placeholder="you@example.com"
                   onChange={onChange}
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D97706] focus:border-[#D97706] sm:text-sm"
                 />
               </div>
 
@@ -118,7 +118,7 @@ export default function Login() {
                   value={formData.password}
                   onChange={onChange}
                   placeholder="********"
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#D97706] focus:border-[#D97706] sm:text-sm"
                 />
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Login() {
               <div className="text-sm">
                 <Link
                   to="/auth/recoverAccount"
-                  className="font-medium text-cyan-600 hover:text-cyan-500"
+                  className="font-medium text-[#B45309] hover:text-[#D97706]"
                 >
                   Forgot your password?
                 </Link>
@@ -137,12 +137,12 @@ export default function Login() {
             <div>
               <button
                 onClick={handleSubmit}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D97706] hover:bg-[#92400E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#D97706]"
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   {isLoading ? (
                     <svg
-                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#92400E] group-hover:text-[#D97706]"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -163,7 +163,7 @@ export default function Login() {
                     </svg>
                   ) : (
                     <LockClosedIcon
-                      className="h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                      className="h-5 w-5 text-[#92400E] group-hover:text-white"
                       aria-hidden="true"
                     />
                   )}
