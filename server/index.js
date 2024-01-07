@@ -4,12 +4,12 @@ const dotenv = require("dotenv").config();
 const connectDb = require("./config/db");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
-const port = process.env.PORT || 5000;
-const { errorHandler } = require("./middleware/errorMiddleware");
-const path = require("path");
 const cors = require("cors");
 
-// Connect to MonogoDB.
+const { errorHandler } = require("./middleware/errorMiddleware");
+const path = require("path");
+
+// Connect to MongoDB.
 connectDb();
 
 const app = express();
@@ -17,44 +17,44 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {});
 
 io.on("connection", (socket) => {
-  // console.log("A user connected!");
+  // Handle user connection
+  console.log("A user connected!");
+
   socket.on("joinRoom", (contestId) => {
-    // console.log(`Joined ${contestId}`);
+    // Handle joining a room
+    console.log(`User joined room: ${contestId}`);
     socket.join(contestId);
 
     socket.on("updateContest", (contestId) => {
-      // Broadcast a message that a user has joined.
-      // console.log("Emitting a contestUpdated event.");
+      // Broadcast a message that a user has updated the contest
+      console.log(`Contest ${contestId} updated`);
       socket.broadcast.to(contestId).emit("contestUpdated", contestId);
     });
   });
 
   socket.on("leaveContest", (contestId) => {
-    // console.log(`Left ${contestId}`);
+    // Handle leaving a room
+    console.log(`User left room: ${contestId}`);
     socket.leave(contestId);
     socket.to(contestId).emit("contestUpdated", contestId);
   });
 });
 
-// Add middlewares to parse json requests and url encoded bodies
-// of requests.
-
+// Middleware setup
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// All routes of the app.
+// API routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/contests", require("./routes/contestRoutes"));
-
-// This is a test route.
-app.use("/api", require("./routes/testRoutes"));
+app.use("/api", require("./routes/testRoutes")); // Test route
 
 // Error middleware
 app.use(errorHandler);
 
+// Start the server
+const port = process.env.PORT || 5000;
 httpServer.listen(port, () => {
-  if (process.env.NODE_ENV === "development") {
-    console.log(`Socket IO listening on port ${port}`);
-  }
+  console.log(`Server listening on port ${port}`);
 });
