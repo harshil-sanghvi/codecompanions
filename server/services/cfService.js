@@ -1,11 +1,12 @@
 const axios = require("axios");
 const { CF_API_URL } = require("../config/constants");
 
+// Utility function to introduce delay
 async function sleep(timeInMilliSeconds) {
   return new Promise((resolve) => setTimeout(resolve, timeInMilliSeconds));
 }
 
-// Make a Codeforces API request.
+// Make a Codeforces API request with retry logic.
 const makeCodeforcesRequest = async (config) => {
   let tries = 0;
   let errorMsg = null;
@@ -94,23 +95,23 @@ const findWinnerForEachProblem = async (handles, problemNames) => {
         error:
           response && response.data && response.error
             ? response.error
-            : "An error occured while determining solved problems.",
+            : "An error occurred while determining solved problems.",
       };
     }
   }
   return { status: "OK", winners };
 };
 
+// Get the updated rank list based on live contest data.
 const getUpdatedRankList = async (liveContest) => {
-  // Fetch last 100 submissions for each user.
-  // Determine if any user solved the problem.
-  // dispatch(getLiveContest());
   const unsolvedProblems = [];
   const handles = [];
+
   if (liveContest) {
     for (const contestant of liveContest.contestants) {
       handles.push(contestant.username);
     }
+
     for (const problem of liveContest.problems) {
       if (!problem.isSolved) {
         unsolvedProblems.push(problem.name);
@@ -121,9 +122,10 @@ const getUpdatedRankList = async (liveContest) => {
     if (res.status !== "OK") {
       return [];
     }
-    const winners = res.winners;
 
+    const winners = res.winners;
     const solvedProblems = [];
+
     for (const [problem, winner] of Object.entries(winners)) {
       solvedProblems.push({
         problemName: problem,
@@ -131,11 +133,14 @@ const getUpdatedRankList = async (liveContest) => {
         timeStamp: winner[problem].timeStamp,
       });
     }
+
     return solvedProblems;
   }
+
   return [];
 };
 
+// A sample variable
 const myVar = "Hello world!!";
 
 module.exports = {
