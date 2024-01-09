@@ -163,7 +163,7 @@ const ProfilePage = () => {
                   </div>
                   <button
                     onClick={handleDeleteProfilePhoto}
-                    className="mt-4 group relative bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                    className="mt-4 group relative bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                   >
                     <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                       {imageDeleteLoading ? (
@@ -220,7 +220,7 @@ const ProfilePage = () => {
                         required
                         autoComplete="email-address"
                         value={user.email}
-                        className="mt-1 text-gray-500 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                        className="mt-1 text-gray-500 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                       />
                     </div>
 
@@ -238,7 +238,7 @@ const ProfilePage = () => {
                         autoComplete="name"
                         value={formData.name}
                         onChange={onChange}
-                        className="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="mt-1 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
                     <div className="col-span-4 sm:col-span-2">
@@ -255,7 +255,7 @@ const ProfilePage = () => {
                         value={formData.username}
                         onChange={onChange}
                         autoComplete="given-name"
-                        className="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="mt-1 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
                   </div>
@@ -263,12 +263,12 @@ const ProfilePage = () => {
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
                     onClick={handleUpdateProfile}
-                    className="inline-flex relative pl-10 justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                    className="inline-flex relative pl-10 justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                   >
                     <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                       {isLoading ? (
                         <svg
-                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-orange-500 group-hover:text-orange-400"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -289,7 +289,7 @@ const ProfilePage = () => {
                         </svg>
                       ) : (
                         <SaveIcon
-                          className="h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                          className="h-5 w-5 text-orange-500 group-hover:text-orange-400"
                           aria-hidden="true"
                         />
                       )}
@@ -321,7 +321,7 @@ const ProfilePage = () => {
                         <div className="flex text-sm text-gray-600">
                           <label
                             htmlFor="file-upload"
-                            className="relative text-center w-full cursor-pointer bg-white rounded-md font-medium text-cyan-600 hover:text-cyan-500"
+                            className="relative text-center w-full cursor-pointer bg-white rounded-md font-medium text-orange-600 hover:text-orange-500"
                           >
                             <span>
                               {isImageUploaded
@@ -348,12 +348,12 @@ const ProfilePage = () => {
                 <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
                   <button
                     onClick={handleUpdateProfilePhoto}
-                    className="inline-flex relative pl-10 justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                    className="inline-flex relative pl-10 justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                   >
                     <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                       {imageUploadLoading ? (
                         <svg
-                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-orange-500 group-hover:text-orange-400"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
@@ -374,7 +374,7 @@ const ProfilePage = () => {
                         </svg>
                       ) : (
                         <PhotographIcon
-                          className="h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                          className="h-5 w-5 text-orange-500 group-hover:text-orange-400"
                           aria-hidden="true"
                         />
                       )}

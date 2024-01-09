@@ -59,7 +59,7 @@ export default function Navbar() {
   };
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 shadow-lg w-full">
+    <Disclosure as="nav" className="bg-stone-800 shadow-lg w-full">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-screen">
@@ -98,8 +98,8 @@ export default function Navbar() {
                         }}
                         className={classNames(
                           item.index === selectedIndex
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            ? "bg-stone-900 text-white"
+                            : "text-gray-300 hover:bg-stone-700 hover:text-white",
                           "px-3 py-2 rounded-md text-sm font-medium"
                         )}
                         aria-current={
@@ -181,8 +181,8 @@ export default function Navbar() {
                       }}
                       className={classNames(
                         5 === selectedIndex
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          ? "bg-stone-900 text-white"
+                          : "text-gray-300 hover:bg-stone-700 hover:text-white",
                         "px-3 py-2 rounded-md text-sm font-medium"
                       )}
                       aria-current={5 === selectedIndex ? "page" : undefined}
@@ -206,8 +206,8 @@ export default function Navbar() {
                   }}
                   className={classNames(
                     item.index === selectedIndex
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      ? "bg-stone-900 text-white"
+                      : "text-gray-300 hover:bg-stone-700 hover:text-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
                 >

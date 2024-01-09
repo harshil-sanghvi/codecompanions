@@ -8,11 +8,11 @@ const HeaderBanner = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={`bg-cyan-600 ${isHeaderBannerOpen ? "" : "hidden"}`}>
+    <div className={`bg-orange-600 ${isHeaderBannerOpen ? "" : "hidden"}`}>
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between flex-wrap">
           <div className="w-0 flex-1 flex items-center">
-            <span className="flex p-2 rounded-lg bg-cyan-800">
+            <span className="flex p-2 rounded-lg bg-orange-800">
               <SpeakerphoneIcon
                 className="h-6 w-6 text-white"
                 aria-hidden="true"
@@ -28,7 +28,7 @@ const HeaderBanner = () => {
             <button
               type="button"
               onClick={() => dispatch(toggleHeaderBanner())}
-              className="-mr-1 flex p-2 rounded-md hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
+              className="-mr-1 flex p-2 rounded-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2"
             >
               <span className="sr-only">Dismiss</span>
               <XIcon className="h-6 w-6 text-white" aria-hidden="true" />

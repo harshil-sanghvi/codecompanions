@@ -3,7 +3,7 @@ export default function Spinner() {
     <div className="flex justify-center items-center">
       <svg
         role="status"
-        className="inline w-16 h-16 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-cyan-600 ease-in duration-300"
+        className="inline w-16 h-16 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-orange-600 ease-in duration-300"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
