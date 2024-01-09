@@ -22,7 +22,7 @@ const Home = () => {
         <div className="container flex flex-col-reverse lg:flex-row-reverse items-center gap-12 mt-14 lg:mt-28">
           {/* Content */}
           <div className="flex flex-1 flex-col items-center lg:items-start">
-            <h2 className="text-[#B45309] text-3xl md:text-4xl lg:text-5xl text-center lg:text-left mb-6">
+            <h2 className="text-cyan-700 text-3xl md:text-4xl lg:text-5xl text-center lg:text-left mb-6">
               Custom Codeforces Contests Organiser
             </h2>
             <p className="text-gray-600 text-lg text-center lg:text-left mb-6">
@@ -33,7 +33,7 @@ const Home = () => {
                 href="https://codeforces.com/"
                 rel="noreferrer"
                 target="_blank"
-                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D97706] hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
               >
                 Codeforces
               </a>
@@ -72,7 +72,7 @@ const Home = () => {
             </div>
             {/* Content */}
             <div className="flex flex-1 flex-col items-center lg:items-start">
-              <h1 className="text-3xl text-[#B45309] text-center lg:text-left">
+              <h1 className="text-3xl text-cyan-700 text-center lg:text-left">
                 Practice problems with your coding companions
               </h1>
               <p className="text-gray-600 text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full">
@@ -80,7 +80,7 @@ const Home = () => {
               </p>
               <Link
                 to="/contests/live"
-                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D97706] hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
               >
                 Live
               </Link>
@@ -92,14 +92,14 @@ const Home = () => {
           <div className="container flex flex-col-reverse lg:flex-row-reverse items-center justify-center gap-x-24">
             {/* Content */}
             <div className="flex flex-1 flex-col items-center lg:items-start">
-              <h1 className="text-3xl text-[#B45309] text-center lg:text-left">
+              <h1 className="text-3xl text-cyan-700 text-center lg:text-left">
               Select custom difficulty settings.
               </h1>
               <p className="text-gray-600 text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full">
               You have the option to customize the ratings of the Codeforces problems according to your preferences.
               </p>
               <Link
-                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D97706] hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
                 to="/contests/create"
               >
                 Create
@@ -120,13 +120,13 @@ const Home = () => {
             </div>
             {/* Content */}
             <div className="flex flex-1 flex-col items-center lg:items-start">
-              <h1 className="text-3xl text-center lg:text-left text-[#B45309]">Engage in a lighthearted competition.</h1>
+              <h1 className="text-3xl text-center lg:text-left text-cyan-700">Engage in a lighthearted competition.</h1>
               <p className="text-gray-600 text-lg my-4 text-center lg:text-left sm:w-3/4 lg:w-full">
               Resolve problems more quickly than your companions to earn points. No points are awarded for resolving a problem that has already been solved.
               </p>
               <Link
                 to="/contests/join"
-                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#D97706] hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
               >
                 Join Contest
               </Link>

@@ -3,7 +3,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="w-full p-[2px] mt-auto flex flex-col items-center gap-2 justify-center mx-0 bottom-5 text-center z-50 bg-[#431407] text-white h-20">
+    <div className="w-full p-[2px] mt-auto flex flex-col items-center gap-2 justify-center mx-0 bottom-5 text-center z-50 bg-zinc-800 text-white h-20">
       <div>
         <span>
           Made by{" "}
