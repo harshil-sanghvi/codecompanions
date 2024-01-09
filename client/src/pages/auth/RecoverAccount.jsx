@@ -82,7 +82,7 @@ const RecoverAccount = () => {
               Or{" "}
               <Link
                 to="/auth/login"
-                className="font-medium text-cyan-600 hover:text-cyan-500"
+                className="font-medium text-orange-600 hover:text-orange-500"
               >
                 Go back to Login
               </Link>
@@ -106,7 +106,7 @@ const RecoverAccount = () => {
                   value={formData.email}
                   placeholder="you@example.com"
                   onChange={onChange}
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                 />
               </div>
             </div>
@@ -114,12 +114,12 @@ const RecoverAccount = () => {
             <div>
               <button
                 onClick={handleSubmit}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                   {isLoading ? (
                     <svg
-                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-orange-500 group-hover:text-orange-400"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ const RecoverAccount = () => {
                     </svg>
                   ) : (
                     <MailIcon
-                      className="h-5 w-5 text-cyan-500 group-hover:text-cyan-400"
+                      className="h-5 w-5 text-orange-500 group-hover:text-orange-400"
                       aria-hidden="true"
                     />
                   )}

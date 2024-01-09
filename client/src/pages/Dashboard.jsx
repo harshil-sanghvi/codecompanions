@@ -69,7 +69,7 @@ const Dashboard = () => {
             contestsList.map((contest, index) => {
               return (
                 <div key={index} className="w-full flex flex-wrap items-center">
-                  <h3 className="text-lg basis-full text-center font-bold text-cyan-700">
+                  <h3 className="text-lg basis-full text-center font-bold text-orange-700">
                     CodeCompanions Contest&nbsp;
                     <span className="text-gray-800">#{index}</span>
                   </h3>
@@ -78,17 +78,17 @@ const Dashboard = () => {
                       <Disclosure>
                         {({ open }) => (
                           <>
-                            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-cyan-50 px-4 py-2 text-left text-sm font-medium text-cyan-900 hover:bg-cyan-100 focus:outline-none focus-visible:ring focus-visible:ring-cyan-500 focus-visible:ring-opacity-75">
+                            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-orange-50 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75">
                               <span>Problems</span>
                               <ChevronUpIcon
                                 className={`${
                                   open ? "rotate-180 transform" : ""
-                                } h-5 w-5 text-cyan-500`}
+                                } h-5 w-5 text-orange-500`}
                               />
                             </Disclosure.Button>
                             <Disclosure.Panel className="py-4">
                               <div className="shadow-md rounded-lg">
-                                <div className="bg-cyan-800 py-2 w-full grid grid-cols-4 gap-2">
+                                <div className="bg-orange-800 py-2 w-full grid grid-cols-4 gap-2">
                                   <div className="text-center col-span-2 p-2">
                                     <h3 className=" text-white text-sm font-semibold">
                                       Problem Link
@@ -111,7 +111,7 @@ const Dashboard = () => {
                                     className="bg-white-200 py-2 w-full grid grid-cols-4 gap-2"
                                   >
                                     <div className="text-center col-span-2 p-2">
-                                      <h3 className="text-cyan-800 text-sm font-bold tracking-wider underline">
+                                      <h3 className="text-orange-800 text-sm font-bold tracking-wider underline">
                                         <a
                                           target="_blank"
                                           rel="noreferrer"
@@ -141,17 +141,17 @@ const Dashboard = () => {
                       <Disclosure as="div" className="mt-2">
                         {({ open }) => (
                           <>
-                            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-cyan-50 px-4 py-2 text-left text-sm font-medium text-cyan-900 hover:bg-cyan-100 focus:outline-none focus-visible:ring focus-visible:ring-cyan-500 focus-visible:ring-opacity-75">
+                            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-orange-50 px-4 py-2 text-left text-sm font-medium text-orange-900 hover:bg-orange-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-75">
                               <span>Ranklist</span>
                               <ChevronUpIcon
                                 className={`${
                                   open ? "rotate-180 transform" : ""
-                                } h-5 w-5 text-cyan-500`}
+                                } h-5 w-5 text-orange-500`}
                               />
                             </Disclosure.Button>
                             <Disclosure.Panel className="py-4">
                               <div className="col-span-7 md:col-span-3 shadow-md rounded-lg">
-                                <div className="bg-cyan-800 py-2 w-full grid grid-cols-4 gap-2">
+                                <div className="bg-orange-800 py-2 w-full grid grid-cols-4 gap-2">
                                   <div className="text-center col-span-1 p-2">
                                     <h3 className="text-white text-sm font-semibold">
                                       Rank

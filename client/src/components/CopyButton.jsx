@@ -24,7 +24,7 @@ const CopyButton = () => {
       )}
       <ClipboardCopyIcon
         onClick={handleOnClick}
-        className="text-gray-500 hover:text-cyan-900"
+        className="text-gray-500 hover:text-orange-900"
       />
     </>
   );

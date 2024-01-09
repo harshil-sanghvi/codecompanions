@@ -131,13 +131,13 @@ const CreateContest = () => {
           <h3 className="text-3xl font-bold leading-6 text-center text-gray-900">
             Create Contest
           </h3>
-          <h4 className="mt-8 text-center text-xl font-semibold text-cyan-700">
+          <h4 className="mt-8 text-center text-xl font-semibold text-orange-700">
             How long do you want to compete?
           </h4>
           <p className="mt-2 text-lg text-center text-gray-500">
             Enter the duration of the contest in minutes.
           </p>
-          <h4 className="mt-8 text-xl text-center font-semibold text-cyan-700">
+          <h4 className="mt-8 text-xl text-center font-semibold text-orange-700">
             What problems do you want to solve?
           </h4>
           <p className="my-2 text-lg text-center text-gray-500">
@@ -168,7 +168,7 @@ const CreateContest = () => {
                       max={MAX_DURATION}
                       min={MIN_DURATION}
                       autoComplete="duration"
-                      className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                      className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                     />
                   </div>
 
@@ -193,7 +193,7 @@ const CreateContest = () => {
                             onChange={onChangeProblem(index)}
                             value={problem.rating}
                             autoComplete="rating"
-                            className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                            className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                           />
                         </div>
                         <div className="col-span-4">
@@ -213,7 +213,7 @@ const CreateContest = () => {
                             autoComplete="points"
                             value={problem.points}
                             onChange={onChangeProblem(index)}
-                            className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 sm:text-sm"
+                            className="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
                           />
                         </div>
                         <div className="col-span-2 items-center cursor-pointer flex justify-center rounded-full">
@@ -240,7 +240,7 @@ const CreateContest = () => {
               <div className="px-4 py-3 bg-gray-50 text-center sm:px-6">
                 <button
                   onClick={handleSubmit}
-                  className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 ${
+                  className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 ${
                     isLoading ? "cursor-not-allowed" : "cursor-pointer"
                   }`}
                   disabled={isLoading}

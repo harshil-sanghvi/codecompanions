@@ -213,7 +213,7 @@ const LiveContest = ({ liveContestState, userState }) => {
         </Suspense>
         <div className="bg-slate-100 rounded-xl shadow-lg p-4 my-4">
           <div className="flex justify-between">
-            <h1 className="text-cyan-800 text-m font-mono">Contest ID</h1>
+            <h1 className="text-orange-800 text-m font-mono">Contest ID</h1>
             <div className="h-6 w-6 shadow-lg p-[2px] hover:scale-105 ease-in duration-75 cursor-pointer bg-gray-200 rounded-md border border-slate-800">
               <CopyButton />
             </div>
@@ -239,7 +239,7 @@ const LiveContest = ({ liveContestState, userState }) => {
             <div className="text-center p-4 w-full">
               <h2 className="text-xl text-gray-800 font-semibold">Problems</h2>
             </div>
-            <div className="bg-cyan-800 py-2 w-full grid grid-cols-4 gap-2">
+            <div className="bg-orange-800 py-2 w-full grid grid-cols-4 gap-2">
               <div className="text-center col-span-2 p-2">
                 <h3 className=" text-white font-semibold">Problem Link</h3>
               </div>
@@ -256,7 +256,7 @@ const LiveContest = ({ liveContestState, userState }) => {
                 className="bg-white-200 py-2 w-full grid grid-cols-4 gap-2"
               >
                 <div className="text-center col-span-2 p-2">
-                  <h3 className="text-cyan-800 font-bold tracking-wider underline">
+                  <h3 className="text-orange-800 font-bold tracking-wider underline">
                     <a
                       target="_blank"
                       rel="noreferrer"
@@ -282,7 +282,7 @@ const LiveContest = ({ liveContestState, userState }) => {
         ) : (
           <div className="col-span-7 md:col-span-4 shadow-md rounded-lg flex align-center justify-center">
             <div className="p-4 flex align-center justify-center">
-              <h2 className="text-center text-2xl font-bold track-widest text-cyan-800">
+              <h2 className="text-center text-2xl font-bold track-widest text-orange-800">
                 Problems will be displayed after the contest is started!
               </h2>
             </div>
@@ -302,7 +302,7 @@ const LiveContest = ({ liveContestState, userState }) => {
               <RefreshIcon className="text-gray-600 hover:text-gray-900" />
             </div>
           </div>
-          <div className="bg-cyan-800 py-2 w-full grid grid-cols-4 gap-2">
+          <div className="bg-orange-800 py-2 w-full grid grid-cols-4 gap-2">
             <div className="text-center col-span-1 p-2">
               <h3 className="text-white font-semibold">Rank</h3>
             </div>
@@ -348,7 +348,7 @@ const LiveContest = ({ liveContestState, userState }) => {
             liveContest.isStarted
               ? "hidden"
               : user._id === liveContest.admin
-              ? `inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 ${
+              ? `inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 ${
                   !loadingContestFinished ? "cursor-not-allowed" : ""
                 }`
               : "hidden"
@@ -359,7 +359,7 @@ const LiveContest = ({ liveContestState, userState }) => {
 
         <button
           onClick={handleLeaveContest}
-          className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500" ${
+          className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" ${
             !loadingContestFinished ? "cursor-not-allowed" : ""
           }`}
         >
