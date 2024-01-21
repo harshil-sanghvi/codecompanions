@@ -80,11 +80,11 @@ To run the server locally:
 
 1. Install dependencies:
    ```bash
-   npm install
+   npm run setup
    ```
 2. Run the Application:
    ```bash
-   npm install
+   npm run dev
    ```
 3. Open your browser and navigate to ``http://localhost:3000``.
 
