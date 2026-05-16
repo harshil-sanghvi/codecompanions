@@ -128,10 +128,6 @@ const getUpdatedRankList = async (liveContest) => {
   return [];
 };
 
-// A sample variable
-const myVar = "Hello world!!";
-
 module.exports = {
   getUpdatedRankList,
-  myVar,
 };
