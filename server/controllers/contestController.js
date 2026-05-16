@@ -365,4 +365,5 @@ module.exports = {
   getOngoingContest,
   startContest,
   leaveContest,
+  getUpdatedContestantsList,
 };
