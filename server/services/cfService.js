@@ -13,27 +13,15 @@ const makeCodeforcesRequest = async (config) => {
   while (tries < 5) {
     tries += 1;
     try {
-      const data = await axios
-        .request(config)
-        .then((response) => {
-          if (response.data && response.status === "OK") {
-            return { status: "OK", data: response.data };
-          } else {
-            return {
-              status: "FAILED",
-              error:
-                errorMsg || "Unable to fetch data. Codeforces API may be down.",
-            };
-          }
-        })
-        .catch((error) => {
-          errorMsg = error.message.toString();
-        });
-      if (data.status && data.status === "OK") return data;
-      await sleep(1000);
+      const response = await axios.request(config);
+      if (response.data && response.data.status === "OK") {
+        return { status: "OK", data: response.data };
+      }
+      errorMsg = "Unable to fetch data. Codeforces API may be down.";
     } catch (error) {
-      console.log(error);
+      errorMsg = error.message.toString();
     }
+    await sleep(1000);
   }
   return {
     status: "FAILED",
