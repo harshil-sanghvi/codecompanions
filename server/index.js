@@ -7,6 +7,7 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 
 const { errorHandler } = require("./middleware/errorMiddleware");
+const { CLIENT_URL } = require("./config/constants");
 const path = require("path");
 
 // Connect to MongoDB.
@@ -14,7 +15,9 @@ connectDb();
 
 const app = express();
 const httpServer = createServer(app);
-const io = new Server(httpServer, {});
+const io = new Server(httpServer, {
+  cors: { origin: CLIENT_URL },
+});
 
 io.on("connection", (socket) => {
   // Handle user connection
@@ -41,7 +44,7 @@ io.on("connection", (socket) => {
 });
 
 // Middleware setup
-app.use(cors());
+app.use(cors({ origin: CLIENT_URL }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
