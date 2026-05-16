@@ -48,7 +48,6 @@ app.use(express.urlencoded({ extended: false }));
 // API routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/contests", require("./routes/contestRoutes"));
-app.use("/api", require("./routes/testRoutes")); // Test route
 
 // Error middleware
 app.use(errorHandler);
