@@ -17,10 +17,10 @@ const getUpdatedContestantsList = async (
     }
   });
   contestantsList.sort(
-    (contestant1, contestant2) => contestant1.points > contestant2.points
+    (contestant1, contestant2) => contestant2.points - contestant1.points
   );
   let rank = 1;
-  for (contestant in contestantsList) {
+  for (const contestant of contestantsList) {
     contestant.rank = rank++;
   }
   return contestantsList;
