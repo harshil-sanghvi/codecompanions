@@ -24,12 +24,12 @@ io.on("connection", (socket) => {
     // Handle joining a room
     console.log(`User joined room: ${contestId}`);
     socket.join(contestId);
+  });
 
-    socket.on("updateContest", (contestId) => {
-      // Broadcast a message that a user has updated the contest
-      console.log(`Contest ${contestId} updated`);
-      socket.broadcast.to(contestId).emit("contestUpdated", contestId);
-    });
+  socket.on("updateContest", (contestId) => {
+    // Broadcast a message that a user has updated the contest
+    console.log(`Contest ${contestId} updated`);
+    socket.broadcast.to(contestId).emit("contestUpdated", contestId);
   });
 
   socket.on("leaveContest", (contestId) => {
