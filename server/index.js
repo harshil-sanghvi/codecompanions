@@ -1,6 +1,7 @@
 const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv").config();
+const helmet = require("helmet");
 const connectDb = require("./config/db");
 const { createServer } = require("http");
 const { Server } = require("socket.io");
@@ -9,6 +10,17 @@ const cors = require("cors");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const { CLIENT_URL } = require("./config/constants");
 const path = require("path");
+
+// Fail fast if required configuration is missing.
+const requiredEnv = ["MONGO_URI", "JWT_SECRET"];
+const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+if (missingEnv.length > 0) {
+  console.error(
+    `Missing required environment variables: ${missingEnv.join(", ")}`.red
+      .underline
+  );
+  process.exit(1);
+}
 
 // Connect to MongoDB.
 connectDb();
@@ -44,6 +56,7 @@ io.on("connection", (socket) => {
 });
 
 // Middleware setup
+app.use(helmet());
 app.use(cors({ origin: CLIENT_URL }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
