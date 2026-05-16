@@ -36,13 +36,12 @@ const registerUser = asyncHandler(async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
 
-  // Create user.
-  const user = await TempUser.create({
-    name,
-    email,
-    password: hashedPassword,
-    username,
-  });
+  // Create or refresh the pending registration for this email.
+  const user = await TempUser.findOneAndUpdate(
+    { email },
+    { name, email, password: hashedPassword, username },
+    { upsert: true, new: true, setDefaultsOnInsert: true }
+  );
 
   if (user) {
     sendMail(user, VERIFY_EMAIL);
