@@ -1,4 +1,5 @@
 const express = require("express");
+const rateLimit = require("express-rate-limit");
 const { body } = require("express-validator");
 const {
   registerUser,
@@ -11,6 +12,20 @@ const {
 } = require("../controllers/authController");
 const { protect } = require("../middleware/authMiddleware");
 const router = express.Router();
+
+// Throttle authentication requests to limit brute-force and abuse.
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    success: false,
+    error: "Too many requests, please try again later.",
+  },
+});
+
+router.use(authLimiter);
 
 // Route for user registration
 router.post(
