@@ -117,8 +117,8 @@ const getUpdatedRankList = async (liveContest) => {
     for (const [problem, winner] of Object.entries(winners)) {
       solvedProblems.push({
         problemName: problem,
-        username: winner[problem].handle,
-        timeStamp: winner[problem].timeStamp,
+        username: winner.handle,
+        timeStamp: winner.timeStamp,
       });
     }
 
