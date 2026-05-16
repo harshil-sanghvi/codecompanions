@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const asyncHandler = require("express-async-handler");
 const { User } = require("../models/userModel");
+const logger = require("../utils/logger");
 
 const protect = asyncHandler(async (req, res, next) => {
   let token;
@@ -27,16 +28,16 @@ const protect = asyncHandler(async (req, res, next) => {
         throw new Error("User not found.");
       }
       req.user = user;
-      console.log("User authenticated successfully.");
+      logger.info("User authenticated successfully.");
       next();
     } catch (error) {
-      console.log(`Error in authentication middleware: ${error.message}`);
+      logger.warn(`Error in authentication middleware: ${error.message}`);
       res.status(401);
       throw new Error("Not authorized for this request.");
     }
   }
   if (!token) {
-    console.log("Not authorized, no token.");
+    logger.warn("Not authorized, no token.");
     res.status(401);
     throw new Error("Not authorized, no token.");
   }

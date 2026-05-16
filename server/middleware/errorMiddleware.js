@@ -1,3 +1,5 @@
+const logger = require("../utils/logger");
+
 const errorHandler = (err, req, res, next) => {
   // Extracting the HTTP status code or defaulting to 500
   const statusCode = res.statusCode ? res.statusCode : 500;
@@ -18,7 +20,7 @@ const errorHandler = (err, req, res, next) => {
   });
 
   // Logging the error details for debugging
-  console.log(`Error Handler: Status ${statusCode}, Message: ${error}`);
+  logger.error(`Error Handler: Status ${statusCode}, Message: ${error}`);
 
   // Continue with the next middleware in the stack
   next();

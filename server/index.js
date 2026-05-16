@@ -1,5 +1,4 @@
 const express = require("express");
-const colors = require("colors");
 const dotenv = require("dotenv").config();
 const helmet = require("helmet");
 const connectDb = require("./config/db");
@@ -9,15 +8,15 @@ const cors = require("cors");
 
 const { errorHandler } = require("./middleware/errorMiddleware");
 const { CLIENT_URL } = require("./config/constants");
+const logger = require("./utils/logger");
 const path = require("path");
 
 // Fail fast if required configuration is missing.
 const requiredEnv = ["MONGO_URI", "JWT_SECRET"];
 const missingEnv = requiredEnv.filter((key) => !process.env[key]);
 if (missingEnv.length > 0) {
-  console.error(
-    `Missing required environment variables: ${missingEnv.join(", ")}`.red
-      .underline
+  logger.error(
+    `Missing required environment variables: ${missingEnv.join(", ")}`
   );
   process.exit(1);
 }
@@ -33,23 +32,23 @@ const io = new Server(httpServer, {
 
 io.on("connection", (socket) => {
   // Handle user connection
-  console.log("A user connected!");
+  logger.info("A user connected!");
 
   socket.on("joinRoom", (contestId) => {
     // Handle joining a room
-    console.log(`User joined room: ${contestId}`);
+    logger.info(`User joined room: ${contestId}`);
     socket.join(contestId);
   });
 
   socket.on("updateContest", (contestId) => {
     // Broadcast a message that a user has updated the contest
-    console.log(`Contest ${contestId} updated`);
+    logger.info(`Contest ${contestId} updated`);
     socket.broadcast.to(contestId).emit("contestUpdated", contestId);
   });
 
   socket.on("leaveContest", (contestId) => {
     // Handle leaving a room
-    console.log(`User left room: ${contestId}`);
+    logger.info(`User left room: ${contestId}`);
     socket.leave(contestId);
     socket.to(contestId).emit("contestUpdated", contestId);
   });
@@ -71,5 +70,5 @@ app.use(errorHandler);
 // Start the server
 const port = process.env.PORT || 5000;
 httpServer.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  logger.info(`Server listening on port ${port}`);
 });
