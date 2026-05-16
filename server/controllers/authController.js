@@ -29,7 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
   const userAlreadyInDb = await User.findOne({ email });
   if (userAlreadyInDb && userAlreadyInDb.verified) {
     res.status(400);
-    throw new Error(`This email is already registered! ${userAlreadyInDb}`);
+    throw new Error("This email is already registered!");
   }
 
   // Generate hash of the password.
