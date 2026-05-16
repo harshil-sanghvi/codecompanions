@@ -4,7 +4,7 @@
   "description": "Custom contest for practice on Codeforces with friends",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server/index.js",
     "server": "nodemon server/index.js",
     "client": "npm start --prefix client",
@@ -15,15 +15,17 @@
   "author": "Umang and Harshil",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.16.1",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^8.5.2",
     "express-validator": "^6.14.0",
-    "jsonwebtoken": "^8.5.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^6.2.4",
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.22",
@@ -31,6 +33,11 @@
     "socket.io": "^4.4.1"
   },
   "devDependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "jest": "^30.4.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": ["server"]
   }
 }

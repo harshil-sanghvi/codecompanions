@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const { validationResult } = require("express-validator");
 const Contest = require("../models/contestModel");
 const { MAX_PLAYERS } = require("../config/constants");
-const { getUpdatedRankList, myVar } = require("../services/cfService");
+const { getUpdatedRankList } = require("../services/cfService");
 const types = require("mongoose").Types;
 
 // Function to update contestants list after a contest operation
@@ -17,10 +17,10 @@ const getUpdatedContestantsList = async (
     }
   });
   contestantsList.sort(
-    (contestant1, contestant2) => contestant1.points > contestant2.points
+    (contestant1, contestant2) => contestant2.points - contestant1.points
   );
   let rank = 1;
-  for (contestant in contestantsList) {
+  for (const contestant of contestantsList) {
     contestant.rank = rank++;
   }
   return contestantsList;
@@ -365,4 +365,5 @@ module.exports = {
   getOngoingContest,
   startContest,
   leaveContest,
+  getUpdatedContestantsList,
 };

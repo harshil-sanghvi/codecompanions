@@ -13,27 +13,15 @@ const makeCodeforcesRequest = async (config) => {
   while (tries < 5) {
     tries += 1;
     try {
-      const data = await axios
-        .request(config)
-        .then((response) => {
-          if (response.data && response.status === "OK") {
-            return { status: "OK", data: response.data };
-          } else {
-            return {
-              status: "FAILED",
-              error:
-                errorMsg || "Unable to fetch data. Codeforces API may be down.",
-            };
-          }
-        })
-        .catch((error) => {
-          errorMsg = error.message.toString();
-        });
-      if (data.status && data.status === "OK") return data;
-      await sleep(1000);
+      const response = await axios.request(config);
+      if (response.data && response.data.status === "OK") {
+        return { status: "OK", data: response.data };
+      }
+      errorMsg = "Unable to fetch data. Codeforces API may be down.";
     } catch (error) {
-      console.log(error);
+      errorMsg = error.message.toString();
     }
+    await sleep(1000);
   }
   return {
     status: "FAILED",
@@ -72,7 +60,7 @@ const findWinnerForEachProblem = async (handles, problemNames) => {
   const winners = {};
   for (const handle of handles) {
     const response = await fetchUserSubmissions(handle, 1, 100);
-    if (response.status === "OK" && response.data && response.data.result) {
+    if (response.status === "OK" && response.result) {
       for (const submission of response.result) {
         if (submission.verdict !== "OK") continue;
         for (const problemName of problemNames) {
@@ -93,7 +81,7 @@ const findWinnerForEachProblem = async (handles, problemNames) => {
       return {
         status: "FAILED",
         error:
-          response && response.data && response.error
+          response && response.error
             ? response.error
             : "An error occurred while determining solved problems.",
       };
@@ -129,8 +117,8 @@ const getUpdatedRankList = async (liveContest) => {
     for (const [problem, winner] of Object.entries(winners)) {
       solvedProblems.push({
         problemName: problem,
-        username: winner[problem].handle,
-        timeStamp: winner[problem].timeStamp,
+        username: winner.handle,
+        timeStamp: winner.timeStamp,
       });
     }
 
@@ -140,10 +128,6 @@ const getUpdatedRankList = async (liveContest) => {
   return [];
 };
 
-// A sample variable
-const myVar = "Hello world!!";
-
 module.exports = {
   getUpdatedRankList,
-  myVar,
 };

@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 const { CLIENT_URL, VERIFY_EMAIL } = require("../config/constants");
+const logger = require("../utils/logger");
 
 /**
  * Generates email options for verifying user's account.
@@ -60,10 +61,10 @@ const sendMail = async (user, mailType) => {
   await transporter
     .sendMail(mailOptions)
     .then(() => {
-      console.log("Email sent successfully!"); // Log success message
+      logger.info("Email sent successfully!");
     })
     .catch((err) => {
-      console.error("Error sending email:", err); // Log error message
+      logger.error(`Error sending email: ${err.message}`);
     });
 };
 
