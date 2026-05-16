@@ -173,7 +173,6 @@ const verifyPasswordResetToken = asyncHandler(async (req, res) => {
   if (!user) {
     throw new Error("This email is not registered.");
   }
-  await user.save();
   res.status(200).json({
     success: true,
     user: {
